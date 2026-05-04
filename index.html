@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Step Digital — Pour les parents solos qui méritent de souffler</title>
+<meta name="description" content="Méthode, outils et accompagnement pour les parents solos qui veulent simplifier leur quotidien, retrouver de l'énergie et créer des revenus en ligne. Par Johanna, maman solo.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Next Step Digital — Pour les parents solos qui méritent de souffler">
+<meta property="og:description" content="Simplifier ton quotidien. Te reconstruire. Construire ton indépendance. Une méthode pas à pas, pensée par une maman solo, pour les parents solos.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================
+     RESET & TOKENS
+     ========================================= */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --teal:        #2f7a7c;
+    --teal-dark:   #1f5a5c;
+    --sand:        #c8a98b;
+    --sand-light:  #e8d9c5;
+    --mint:        #1ec7a6;
+    --mint-dark:   #178a73;
+    --cream:       #f7f4ef;
+    --cream-warm:  #fbf9f5;
+    --cream-deep:  #efe9de;
+    --ink:         #2a2a2a;
+    --ink-soft:    #555;
+    --ink-mute:    #888;
+
+    --font-display: 'Lora', Georgia, serif;
+    --font-body:    'Poppins', system-ui, sans-serif;
+
+    --max:    1200px;
+    --gutter: clamp(20px, 5vw, 48px);
+
+    --radius-sm: 6px;
+    --radius:    14px;
+    --radius-lg: 24px;
+
+    --shadow-sm: 0 2px 8px rgba(47, 122, 124, 0.06);
+    --shadow:    0 8px 28px rgba(47, 122, 124, 0.10);
+    --shadow-lg: 0 24px 64px rgba(47, 122, 124, 0.16);
+
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img { max-width: 100%; height: auto; display: block; }
+
+  a { color: inherit; text-decoration: none; }
+
+  ::selection {
+    background: var(--mint);
+    color: var(--teal-dark);
+  }
+
+  /* =========================================
+     UTILITY
+     ========================================= */
+  .container {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-inline: var(--gutter);
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--sand);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: currentColor;
+  }
+  .eyebrow.center {
+    justify-content: center;
+  }
+  .eyebrow.center::after {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--teal);
+  }
+
+  .display em {
+    font-style: italic;
+    color: var(--mint);
+    font-weight: 400;
+  }
+
+  /* =========================================
+     NAV
+     ========================================= */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 244, 239, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, padding 0.3s;
+  }
+  .nav.scrolled {
+    border-bottom-color: var(--cream-deep);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 18px;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--teal);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--mint);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s, background 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
+  .btn-mint {
+    background: var(--mint);
+    color: var(--teal-dark);
+  }
+  .btn-mint:hover {
+    background: var(--mint-dark);
+    color: var(--cream);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--teal);
+    border: 1px solid var(--sand);
+  }
+  .btn-ghost:hover {
+    background: var(--teal);
+    color: var(--cream);
+    border-color: var(--teal);
+  }
+  .btn-arrow::after {
+    content: "→";
+    transition: transform 0.2s;
+  }
+  .btn-arrow:hover::after { transform: translateX(4px); }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--teal);
+  }
+  .nav-mobile-toggle svg { display: block; }
+
+  /* =========================================
+     HERO
+     ========================================= */
+  .hero {
+    position: relative;
+    padding-block: clamp(60px, 10vw, 110px) clamp(80px, 12vw, 130px);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(30, 199, 166, 0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(200, 169, 139, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 5.5vw, 68px);
+    margin-block: 24px 28px;
+    max-width: 14ch;
+  }
+  .hero-lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 540px;
+    margin-bottom: 36px;
+  }
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 24px;
+  }
+  .hero-trust-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Hero card visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 460px;
+    width: 100%;
+    margin-left: auto;
+  }
+  .hero-card {
+    position: absolute;
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s var(--ease);
+  }
+  .hero-card:hover { transform: translateY(-4px); }
+
+  .hero-card-1 {
+    top: 0;
+    left: 0;
+    width: 70%;
+    background: var(--teal);
+    color: var(--cream);
+    z-index: 3;
+  }
+  .hero-card-1 .label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+  .hero-card-1 .title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .hero-card-1 .title em { color: var(--mint); }
+
+  .hero-card-2 {
+    top: 30%;
+    right: 0;
+    width: 65%;
+    background: var(--cream-warm);
+    z-index: 2;
+  }
+  .hero-card-2-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal-dark);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .hero-card-2-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--teal);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .hero-card-2-text {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .hero-card-3 {
+    bottom: 0;
+    left: 12%;
+    width: 60%;
+    background: white;
+    z-index: 1;
+    padding: 22px 24px;
+  }
+  .hero-card-3-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .hero-card-3-line:last-child { margin-bottom: 0; }
+  .hero-card-3-check {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal-dark);
+    font-size: 8px;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* =========================================
+     PAIN / RECOGNITION
+     ========================================= */
+  .pain {
+    background: var(--cream-deep);
+    padding-block: clamp(70px, 10vw, 110px);
+    position: relative;
+  }
+  .pain-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+  }
+  .pain-header h2 {
+    font-size: clamp(30px, 4.5vw, 48px);
+    margin-top: 18px;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .pain-quote {
+    background: var(--cream);
+    padding: 28px 28px 26px;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--teal);
+    position: relative;
+    border-left: 3px solid var(--mint);
+  }
+  .pain-quote::before {
+    content: "“";
+    position: absolute;
+    top: -10px;
+    left: 18px;
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--sand);
+    line-height: 1;
+  }
+  .pain-coda {
+    text-align: center;
+    margin-top: 50px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--teal);
+    font-style: italic;
+  }
+  .pain-coda strong {
+    font-style: normal;
+    color: var(--mint-dark);
+    font-weight: 500;
+  }
+
+  /* =========================================
+     FOUNDER
+     ========================================= */
+  .founder {
+    padding-block: clamp(70px, 10vw, 120px);
+  }
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+  .founder-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 420px;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--sand-light), var(--sand));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+  }
+  .founder-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(47, 122, 124, 0.15), transparent 50%);
+  }
+  .founder-image-placeholder {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--cream);
+    font-family: var(--font-display);
+    padding: 30px;
+  }
+  .founder-image-placeholder .name {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .founder-image-placeholder .role {
+    font-size: 14px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.85;
+  }
+  .founder h2 {
+    font-size: clamp(30px, 4.5vw, 50px);
+    margin-block: 18px 28px;
+  }
+  .founder p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 18px;
+    max-width: 560px;
+  }
+  .founder p strong {
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .founder-signature {
+    margin-top: 30px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--teal);
+  }
+
+  /* =========================================
+     METHODE — THE 3 STEPS
+     ========================================= */
+  .method {
+    padding-block: clamp(70px, 10vw, 120px);
+    background:
+      radial-gradient(circle at 20% 0%, rgba(30, 199, 166, 0.06), transparent 50%),
+      radial-gradient(circle at 80% 100%, rgba(200, 169, 139, 0.08), transparent 50%),
+      var(--cream);
+    position: relative;
+  }
+  .method-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 70px;
+  }
+  .method-header h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin-block: 18px 22px;
+  }
+  .method-header p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .method-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+  .method-steps::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sand) 20%, var(--sand) 80%, transparent);
+    z-index: 0;
+  }
+
+  .step {
+    position: relative;
+    background: white;
+    border-radius: var(--radius);
+    padding: 36px 30px 32px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    z-index: 1;
+  }
+  .step:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+  .step-number {
+    position: absolute;
+    top: -22px;
+    left: 30px;
+    width: 44px;
+    height: 44px;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--teal);
+  }
+  .step-1 .step-icon { background: var(--mint); }
+  .step-2 .step-icon { background: var(--sand); }
+  .step-3 .step-icon { background: var(--teal); color: var(--cream); }
+
+  .step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    margin-top: 12px;
+    color: var(--teal-dark);
+  }
+  .step-icon svg { width: 26px; height: 26px; }
+
+  .step-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .step h3 {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--teal);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .step h3 em { color: var(--mint); font-style: italic; }
+  .step p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* =========================================
+     LEAD MAGNET
+     ========================================= */
+  .lead {
+    padding-block: clamp(70px, 10vw, 110px);
+  }
+  .lead-card {
+    background: var(--teal);
+    border-radius: var(--radius-lg);
+    padding: clamp(40px, 6vw, 70px);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .lead-card::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 199, 166, 0.25), transparent 70%);
+  }
+  .lead-card-inner { position: relative; z-index: 1; }
+
+  .lead .eyebrow { color: var(--mint); }
+  .lead .eyebrow::before { background: var(--mint); }
+
+  .lead h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    color: var(--cream);
+    margin-block: 16px 20px;
+  }
+  .lead h2 em { color: var(--mint); font-style: italic; }
+  .lead-text {
+    color: rgba(247, 244, 239, 0.85);
+    font-size: 15.5px;
+    line-height: 1.65;
+    margin-bottom: 26px;
+    max-width: 480px;
+  }
+
+  .lead-promise {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14.5px;
+    color: rgba(247, 244, 239, 0.7);
+    margin-bottom: 32px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-lead {
+    padding: 18px 32px;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .lead-finetext {
+    font-size: 12px;
+    color: rgba(247, 244, 239, 0.65);
+    margin-top: 4px;
+  }
+
+  .lead-visual {
+    position: relative;
+    z-index: 1;
+  }
+  .lead-mockup {
+    aspect-ratio: 3/4;
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    color: var(--ink);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    transform: rotate(-2deg);
+    transition: transform 0.4s var(--ease);
+    max-width: 320px;
+    margin-left: auto;
+  }
+  .lead-mockup:hover { transform: rotate(0deg) scale(1.02); }
+
+  .lead-mockup-header {
+    border-bottom: 1px solid var(--cream-deep);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .lead-mockup-eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .lead-mockup-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--teal);
+  }
+  .lead-mockup-title em { color: var(--mint); font-style: italic; }
+
+  .lead-mockup-list { list-style: none; }
+  .lead-mockup-list li {
+    display: flex;
+    gap: 10px;
+    padding: 9px 0;
+    font-size: 12px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--cream-deep);
+  }
+  .lead-mockup-list li:last-child { border-bottom: none; }
+  .lead-mockup-list li::before {
+    counter-increment: tools;
+    content: counter(tools);
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    color: var(--teal);
+    font-family: var(--font-display);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  .lead-mockup-list { counter-reset: tools; }
+
+  /* =========================================
+     PACKS — 3 PRODUCT CARDS
+     ========================================= */
+  .packs {
+    padding-block: clamp(70px, 10vw, 120px);
+    background: var(--cream-warm);
+    position: relative;
+  }
+  .packs::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 199, 166, 0.05), transparent 70%);
+    pointer-events: none;
+  }
+  .packs-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 64px;
+    position: relative;
+    z-index: 1;
+  }
+  .packs-header h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin-block: 18px 22px;
+  }
+  .packs-header p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pack {
+    position: relative;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 38px 32px 32px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s;
+    border-top: 4px solid;
+  }
+  .pack:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+  .pack-1 { border-top-color: var(--teal); }
+  .pack-2 { border-top-color: var(--sand); }
+  .pack-3 { border-top-color: var(--mint); }
+
+  .pack-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--teal);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pack-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .pack-step {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+  .pack-1 .pack-step { background: var(--teal); color: var(--cream); }
+  .pack-2 .pack-step { background: var(--sand); color: var(--cream); }
+  .pack-3 .pack-step { background: var(--mint); color: var(--teal-dark); }
+
+  .pack-label {
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sand);
+    font-weight: 500;
+  }
+
+  .pack-title {
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .pack-title em {
+    font-style: italic;
+    color: var(--mint);
+  }
+  .pack-2 .pack-title em { color: var(--mint-dark); }
+
+  .pack-tag {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    min-height: 60px;
+  }
+
+  .pack-features {
+    list-style: none;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .pack-features li {
+    display: flex;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 13.5px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--cream-deep);
+    line-height: 1.45;
+  }
+  .pack-features li:last-child { border-bottom: none; }
+  .pack-features li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+    margin-top: 8px;
+  }
+  .pack-2 .pack-features li::before { background: var(--sand); }
+  .pack-3 .pack-features li::before { background: var(--mint); }
+
+  .pack-cta { margin-top: auto; }
+  .pack-cta .btn { width: 100%; justify-content: center; }
+
+  .packs-note {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .packs-note-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+  }
+
+  /* =========================================
+     PARCOURS COMPLET — BUNDLE
+     ========================================= */
+  .bundle {
+    background: var(--teal);
+    padding-block: clamp(70px, 10vw, 120px);
+    position: relative;
+    overflow: hidden;
+  }
+  .bundle::before {
+    content: "";
+    position: absolute;
+    top: -160px;
+    right: -160px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 199, 166, 0.18), transparent 65%);
+    pointer-events: none;
+  }
+  .bundle::after {
+    content: "";
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 169, 139, 0.12), transparent 65%);
+    pointer-events: none;
+  }
+
+  .bundle-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(50px, 7vw, 100px);
+    align-items: center;
+  }
+
+  .bundle .eyebrow {
+    color: var(--mint);
+  }
+  .bundle .eyebrow::before {
+    background: var(--mint);
+  }
+
+  .bundle-title {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-block: 18px 22px;
+  }
+  .bundle-title em {
+    font-style: italic;
+    color: var(--mint);
+  }
+
+  .bundle-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(247, 244, 239, 0.85);
+    margin-bottom: 36px;
+    max-width: 520px;
+  }
+  .bundle-text strong {
+    color: var(--mint);
+    font-weight: 500;
+  }
+
+  .bundle-list {
+    list-style: none;
+    margin-bottom: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .bundle-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s;
+  }
+  .bundle-item:hover { background: rgba(247, 244, 239, 0.07); }
+
+  .bundle-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .bundle-item strong {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .bundle-item span {
+    font-size: 12.5px;
+    color: rgba(247, 244, 239, 0.6);
+  }
+
+  .bundle-item-step {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 400;
+    flex-shrink: 0;
+    color: var(--teal-dark);
+  }
+  .bundle-item-1 .bundle-item-step { background: rgba(247, 244, 239, 0.25); color: var(--cream); }
+  .bundle-item-2 .bundle-item-step { background: var(--sand); color: var(--cream); }
+  .bundle-item-3 .bundle-item-step { background: var(--mint); color: var(--teal-dark); }
+
+  .bundle-item-bonus {
+    border: 1px solid rgba(30, 199, 166, 0.35);
+    background: rgba(30, 199, 166, 0.08);
+    border-radius: var(--radius-sm);
+    margin-top: 4px;
+  }
+  .bundle-item-bonus:hover { background: rgba(30, 199, 166, 0.14); }
+  .bundle-item-bonus strong { color: var(--mint); }
+  .bundle-item-step-bonus {
+    background: var(--mint);
+    color: var(--teal-dark);
+    font-style: normal;
+    font-size: 14px;
+  }
+
+  .bundle-cta {
+    padding: 18px 34px;
+    font-size: 15px;
+  }
+
+  /* ---- Stacked cards visual ---- */
+  .bundle-visual {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+  }
+
+  .bundle-card {
+    position: absolute;
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    width: 82%;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s var(--ease);
+  }
+  .bundle-visual:hover .bundle-card-1 { transform: translate(0px, -8px) rotate(-4deg); }
+  .bundle-visual:hover .bundle-card-2 { transform: translate(16px, -4px) rotate(1deg); }
+  .bundle-visual:hover .bundle-card-3 { transform: translate(28px, 2px) rotate(4deg); }
+  .bundle-visual:hover .bundle-card-4 { transform: translate(36px, 8px) rotate(6deg); }
+
+  .bundle-card-1 {
+    background: var(--teal-dark);
+    border: 1px solid rgba(247, 244, 239, 0.15);
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    transform: rotate(-2deg);
+  }
+  .bundle-card-2 {
+    background: #3a8a8c;
+    border: 1px solid rgba(247, 244, 239, 0.12);
+    bottom: 40px;
+    left: 20px;
+    z-index: 3;
+    transform: rotate(0.5deg);
+  }
+  .bundle-card-3 {
+    background: #4a9a9c;
+    border: 1px solid rgba(247, 244, 239, 0.10);
+    bottom: 80px;
+    left: 40px;
+    z-index: 2;
+    transform: rotate(2.5deg);
+  }
+  .bundle-card-4 {
+    background: var(--mint);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    bottom: 120px;
+    left: 60px;
+    z-index: 1;
+    transform: rotate(4.5deg);
+  }
+
+  .bc-step {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(247, 244, 239, 0.6);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .bc-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  .bc-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--cream);
+  }
+  .bc-title em {
+    font-style: italic;
+    color: var(--mint);
+  }
+  .bundle-card-4 .bc-title {
+    color: var(--teal-dark);
+  }
+  .bundle-card-4 .bc-title em {
+    color: var(--teal-dark);
+    font-style: italic;
+  }
+
+  /* =========================================
+     PROMISE
+     ========================================= */
+  .promise {
+    padding-block: clamp(70px, 10vw, 110px);
+    text-align: center;
+  }
+  .promise-inner {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .promise blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(24px, 3.5vw, 38px);
+    line-height: 1.35;
+    color: var(--teal);
+    margin-block: 24px 36px;
+  }
+  .promise blockquote em {
+    color: var(--mint);
+    font-style: italic;
+  }
+  .promise-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--sand);
+    margin: 0 auto;
+    position: relative;
+  }
+  .promise-divider::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background: var(--mint);
+    border-radius: 50%;
+  }
+  .promise-cite {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--sand);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* =========================================
+     FAQ
+     ========================================= */
+  .faq {
+    padding-block: clamp(70px, 10vw, 110px);
+    background: var(--cream-deep);
+  }
+  .faq-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .faq-header h2 {
+    font-size: clamp(30px, 4.5vw, 48px);
+    margin-top: 18px;
+  }
+  .faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    background: var(--cream);
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .faq-item[open] { box-shadow: var(--shadow-sm); }
+
+  .faq-question {
+    padding: 22px 28px;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--teal);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+  }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question:hover { color: var(--mint-dark); }
+  .faq-question::after {
+    content: "+";
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--sand);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+    color: var(--mint-dark);
+  }
+  .faq-answer {
+    padding: 0 28px 24px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* =========================================
+     FINAL CTA
+     ========================================= */
+  .final-cta {
+    padding-block: clamp(70px, 10vw, 130px);
+    text-align: center;
+  }
+  .final-cta-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .final-cta h2 {
+    font-size: clamp(36px, 5.5vw, 64px);
+    margin-block: 22px 24px;
+  }
+  .final-cta p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 520px;
+    margin: 0 auto 36px;
+  }
+
+  /* =========================================
+     FOOTER
+     ========================================= */
+  .footer {
+    background: var(--teal);
+    color: var(--cream);
+    padding-block: 64px 28px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .footer-brand .logo {
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .footer-brand p {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: rgba(247, 244, 239, 0.75);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 360px;
+  }
+  .footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mint);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    color: rgba(247, 244, 239, 0.75);
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--mint); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(247, 244, 239, 0.15);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(247, 244, 239, 0.55);
+  }
+
+  /* =========================================
+     SCROLL ANIMATIONS (progressive enhancement)
+     ========================================= */
+  /* Default: visible. Only hidden when JS is active. */
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  }
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .js .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* =========================================
+     RESPONSIVE
+     ========================================= */
+  @media (max-width: 1000px) {
+    .packs-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .bundle-inner {
+      grid-template-columns: 1fr;
+    }
+    .bundle-visual {
+      margin: 0 auto;
+      height: 280px;
+      max-width: 280px;
+      order: -1;
+    }
+    .bundle-card { width: 78%; }
+    .bundle-card-1 { bottom: 0; left: 0; }
+    .bundle-card-2 { bottom: 28px; left: 14px; }
+    .bundle-card-3 { bottom: 56px; left: 28px; }
+    .bundle-card-4 { bottom: 84px; left: 42px; }
+  }
+  @media (max-width: 900px) {
+    .hero-grid,
+    .founder-grid,
+    .lead-card {
+      grid-template-columns: 1fr;
+    }
+    /* Convert hero visual to vertical stack on mobile */
+    .hero-visual {
+      max-width: 100%;
+      margin: 30px 0 0;
+      aspect-ratio: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-card {
+      position: static;
+      width: 100% !important;
+    }
+    .hero-card-1 { transform: none; }
+    .hero-card-2 { transform: none; }
+    .hero-card-3 { transform: none; }
+
+    .founder-image {
+      margin: 0 auto;
+    }
+    .method-steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .method-steps::before { display: none; }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: block; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      padding: 24px var(--gutter);
+      border-bottom: 1px solid var(--cream-deep);
+      list-style: none;
+    }
+    .nav-links.open li { width: 100%; }
+    .nav-links.open .btn { width: 100%; justify-content: center; }
+    .lead-card { padding: clamp(28px, 5vw, 40px); }
+    .lead-mockup { transform: rotate(0); margin: 0 auto; max-width: 280px; }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: clamp(36px, 9vw, 50px); }
+    .pain-grid { grid-template-columns: 1fr; }
+    .btn-lead { width: 100%; }
+    .pack { padding: 32px 26px 28px; }
+    .pack-tag { min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-dot"></span>
+      Next Step Digital
+    </a>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#methode">La méthode</a></li>
+      <li><a href="#packs">Les packs</a></li>
+      <li><a href="#parcours-complet">Parcours Complet</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#lead-magnet" class="btn btn-mint">5 outils gratuits</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Pour les parents solos</span>
+      <h1 class="display">Tu portes tout. Personne ne t'a jamais montré <em>comment alléger.</em></h1>
+      <p class="hero-lede">
+        Une méthode pas à pas pour simplifier ton quotidien, retrouver ton souffle, et — quand tu seras prête — construire des revenus en ligne adaptés à ta vie de parent solo.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#lead-magnet" class="btn btn-primary btn-arrow">Recevoir mes 5 outils gratuits</a>
+        <a href="#packs" class="btn btn-ghost">Voir mes packs</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-dot"></span>
+        Pensé et écrit par Johanna, maman solo de deux enfants.
+      </div>
+    </div>
+
+    <div class="hero-visual reveal reveal-delay-2">
+      <div class="hero-card hero-card-1">
+        <div class="label">Étape 1</div>
+        <div class="title">Je <em>m'organise.</em></div>
+      </div>
+      <div class="hero-card hero-card-2">
+        <div class="hero-card-2-icon">2</div>
+        <div class="hero-card-2-title">Je me reconstruis</div>
+        <div class="hero-card-2-text">Reprendre des forces, anticiper les imprévus, retrouver de l'air pour soi.</div>
+      </div>
+      <div class="hero-card hero-card-3">
+        <div class="hero-card-3-line"><span class="hero-card-3-check">✓</span> Routines matin & soir simplifiées</div>
+        <div class="hero-card-3-line"><span class="hero-card-3-check">✓</span> Plan de survie 7 jours</div>
+        <div class="hero-card-3-line"><span class="hero-card-3-check">✓</span> Idées de revenus en ligne</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN / RECOGNITION ============ -->
+<section class="pain">
+  <div class="container">
+    <div class="pain-header reveal">
+      <span class="eyebrow center">Si tu te reconnais ici…</span>
+      <h2 class="display">Tu n'es pas <em>seul·e</em> à vivre ça.</h2>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-quote reveal">Je ne sais plus quel jour on est. Je gère, mais à quel prix.</div>
+      <div class="pain-quote reveal reveal-delay-1">Je voudrais juste qu'on me dise par où commencer, et qu'on me lâche un peu.</div>
+      <div class="pain-quote reveal reveal-delay-2">Je rêve d'un revenu qui me laisse du temps avec mes enfants. Mais je ne sais pas si c'est possible pour moi.</div>
+      <div class="pain-quote reveal reveal-delay-3">À la fin de la journée, il ne reste plus rien pour moi. Et ça dure depuis trop longtemps.</div>
+    </div>
+
+    <p class="pain-coda reveal">Ces phrases, je les ai pensées aussi. <strong>Et il y a une autre voie.</strong></p>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ============ -->
+<section class="founder">
+  <div class="container founder-grid">
+    <div class="founder-image reveal">
+      <div class="founder-image-placeholder">
+        <div class="name">Johanna</div>
+        <div class="role">Fondatrice</div>
+      </div>
+      <!-- Pour ajouter ta vraie photo, remplace le bloc ci-dessus par :
+           <img src="ton-image.jpg" alt="Johanna, fondatrice de Next Step Digital">
+      -->
+    </div>
+
+    <div class="founder-text reveal reveal-delay-1">
+      <span class="eyebrow">Bonjour, moi c'est Johanna</span>
+      <h2 class="display">Je suis maman solo, <em>comme toi.</em></h2>
+      <p>
+        J'ai élevé seule ma fille de 15 ans pendant plusieurs années. Aujourd'hui, j'élève presque seule mon petit garçon de 21 mois. <strong>Je connais la charge mentale, les journées trop courtes, la fatigue qui ne s'arrête jamais.</strong>
+      </p>
+      <p>
+        Avec le temps, j'ai compris une chose : les parents solos ne manquent pas de courage — ils manquent d'outils et d'organisation pensés pour leur réalité. Pas pour des familles avec deux adultes. Pas pour des couples sans enfants. <em>Pour nous.</em>
+      </p>
+      <p>
+        C'est pour ça que j'ai créé Next Step Digital. Pour offrir aux parents solos une méthode claire, douce et progressive — celle que j'aurais aimé qu'on me tende, il y a quelques années.
+      </p>
+      <div class="founder-signature">— Johanna</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METHODE ============ -->
+<section class="method" id="methode">
+  <div class="container">
+    <div class="method-header reveal">
+      <span class="eyebrow center">La méthode Next Step</span>
+      <h2 class="display">Trois étapes, <em>un chemin.</em></h2>
+      <p>Pas de transformation magique. Juste une progression douce, dans l'ordre, à ton rythme. Chaque étape pose les fondations de la suivante — et tu n'avances que quand tu es prêt·e.</p>
+    </div>
+
+    <div class="method-steps">
+      <div class="step step-1 reveal">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+            <path d="M8 14l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="step-label">Étape 1 · Le quotidien</div>
+        <h3>Je <em>m'organise.</em></h3>
+        <p>Reprendre le contrôle de tes journées avec des routines simples, des plannings clairs, et des outils qui ne demandent pas plus d'énergie qu'ils n'en font gagner.</p>
+      </div>
+
+      <div class="step step-2 reveal reveal-delay-1">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v8"/>
+            <path d="M5.5 9.5L12 12l6.5-2.5"/>
+            <path d="M3 11l9 4 9-4"/>
+            <path d="M3 15l9 4 9-4"/>
+            <path d="M3 19l9 4 9-4"/>
+          </svg>
+        </div>
+        <div class="step-label">Étape 2 · Toi</div>
+        <h3>Je me <em>reconstruis.</em></h3>
+        <p>Reprendre des forces, anticiper les imprévus, mettre en place un plan B émotionnel et financier — pour ne plus jamais avoir l'impression que tout peut s'effondrer en même temps.</p>
+      </div>
+
+      <div class="step step-3 reveal reveal-delay-2">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h4l3-9 6 18 3-9h4"/>
+          </svg>
+        </div>
+        <div class="step-label">Étape 3 · L'avenir</div>
+        <h3>Je <em>m'émancipe.</em></h3>
+        <p>Construire ton indépendance financière avec un produit digital qui te ressemble. Une activité en ligne pensée pour ta réalité de parent solo : flexible, scalable, et compatible avec ta vie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAD MAGNET ============ -->
+<section class="lead" id="lead-magnet">
+  <div class="container">
+    <div class="lead-card">
+      <div class="lead-card-inner">
+        <span class="eyebrow">Cadeau · 100 % gratuit</span>
+        <h2>5 outils <em>concrets</em> pour survivre à cette semaine.</h2>
+        <p class="lead-text">
+          Un PDF immédiatement utilisable, conçu pour les parents solos qui n'ont ni le temps ni l'énergie pour les méthodes interminables. Cinq outils. Une semaine. Du soulagement réel.
+        </p>
+        <p class="lead-promise">Routine matin · Repas express · Messages d'aide · Checklist survie · Parler aux enfants</p>
+
+        <!-- IMPORTANT : remplace l'href ci-dessous par l'URL de ta page de capture -->
+        <a href="#" class="btn btn-mint btn-arrow btn-lead">Je télécharge mes 5 outils</a>
+        <p class="lead-finetext">100 % gratuit · Téléchargement immédiat · Pas de spam, jamais.</p>
+      </div>
+
+      <div class="lead-visual">
+        <div class="lead-mockup">
+          <div class="lead-mockup-header">
+            <div class="lead-mockup-eyebrow">Guide gratuit</div>
+            <div class="lead-mockup-title">5 outils <em>gratuits</em> pour parents solos</div>
+          </div>
+          <ul class="lead-mockup-list">
+            <li>Routine matin express (15 min)</li>
+            <li>10 repas rapides &amp; petit budget</li>
+            <li>Messages pour demander de l'aide</li>
+            <li>Checklist « 5 gestes simples »</li>
+            <li>Parler aux enfants de la séparation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS — 3 PACKS ============ -->
+<section class="packs" id="packs">
+  <div class="container">
+    <div class="packs-header reveal">
+      <span class="eyebrow center">Mes packs · Trois étapes, un chemin</span>
+      <h2 class="display">Choisis ton <em>point de départ.</em></h2>
+      <p>Pensés pour être utilisés dans l'ordre — mais accessibles individuellement. Chaque pack est complet en lui-même, et débloque une étape de ta transformation.</p>
+    </div>
+
+    <div class="packs-grid">
+      <!-- Pack 1 : Je m'organise -->
+      <article class="pack pack-1 reveal">
+        <div class="pack-badge">★ Recommandé pour commencer</div>
+        <div class="pack-top">
+          <span class="pack-step">01</span>
+          <span class="pack-label">Le quotidien</span>
+        </div>
+        <h3 class="pack-title">Je <em>m'organise.</em></h3>
+        <p class="pack-tag">Reprendre le contrôle de tes journées avec des outils simples, conçus pour des cerveaux fatigués.</p>
+
+        <ul class="pack-features">
+          <li>L'ebook complet « Je m'organise »</li>
+          <li>Plan de survie 7 jours</li>
+          <li>Planning hebdomadaire prêt à l'emploi</li>
+          <li>Templates courses & checklists ménage</li>
+          <li>Routines matin & soir, parent et enfant</li>
+        </ul>
+
+        <div class="pack-cta">
+          <!-- Remplace l'href par l'URL de ton tunnel de vente du pack 1 -->
+          <a href="#" class="btn btn-primary btn-arrow">Découvrir le pack</a>
+        </div>
+      </article>
+
+      <!-- Pack 2 : Je me reconstruis -->
+      <article class="pack pack-2 reveal reveal-delay-1">
+        <div class="pack-top">
+          <span class="pack-step">02</span>
+          <span class="pack-label">Toi</span>
+        </div>
+        <h3 class="pack-title">Je me <em>reconstruis.</em></h3>
+        <p class="pack-tag">Reprendre des forces, anticiper les imprévus, mettre en place un vrai filet de sécurité.</p>
+
+        <ul class="pack-features">
+          <li>L'ebook « Se reconstruire en parent solo »</li>
+          <li>Plan d'urgence 7 jours</li>
+          <li>Budget simplifié pas à pas</li>
+          <li>Plan B « anticiper les imprévus »</li>
+          <li>Ressources, aides & contacts d'urgence</li>
+        </ul>
+
+        <div class="pack-cta">
+          <!-- Remplace l'href par l'URL de ton tunnel de vente du pack 2 -->
+          <a href="#" class="btn btn-primary btn-arrow">Découvrir le pack</a>
+        </div>
+      </article>
+
+      <!-- Pack 3 : Je m'émancipe -->
+      <article class="pack pack-3 reveal reveal-delay-2">
+        <div class="pack-top">
+          <span class="pack-step">03</span>
+          <span class="pack-label">L'avenir</span>
+        </div>
+        <h3 class="pack-title">Je <em>m'émancipe.</em></h3>
+        <p class="pack-tag">Bâtir ton indépendance financière avec un produit digital qui te ressemble.</p>
+
+        <ul class="pack-features">
+          <li>L'ebook « Créer des revenus en ligne »</li>
+          <li>Feuille de route 30 jours pour lancer</li>
+          <li>Tableau de bord revenus / dépenses</li>
+          <li>Guide « choisir ton idée business »</li>
+          <li>Scripts d'annonce sur les réseaux sociaux</li>
+        </ul>
+
+        <div class="pack-cta">
+          <!-- Remplace l'href par l'URL de ton tunnel de vente du pack 3 -->
+          <a href="#" class="btn btn-primary btn-arrow">Découvrir le pack</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="packs-note reveal">
+      <span class="packs-note-dot"></span>
+      Paiement sécurisé · Accès immédiat · Garantie satisfait·e
+    </p>
+  </div>
+</section>
+
+<!-- ============ PARCOURS COMPLET ============ -->
+<section class="bundle" id="parcours-complet">
+  <div class="container">
+    <div class="bundle-inner reveal">
+
+      <div class="bundle-content">
+        <span class="eyebrow">Tout en un</span>
+        <h2 class="bundle-title">Le Parcours <em>Complet.</em></h2>
+        <p class="bundle-text">
+          Les trois packs réunis dans un seul accès, avec le bonus exclusif <strong>« Par où commencer ? »</strong> pour ne jamais te perdre en route. Du premier geste d'urgence jusqu'à l'indépendance financière — un chemin clair, du début à la fin.
+        </p>
+
+        <ul class="bundle-list">
+          <li class="bundle-item bundle-item-1">
+            <span class="bundle-item-step">01</span>
+            <div>
+              <strong>Pack « Je m'organise »</strong>
+              <span>Reprendre le contrôle de tes journées</span>
+            </div>
+          </li>
+          <li class="bundle-item bundle-item-2">
+            <span class="bundle-item-step">02</span>
+            <div>
+              <strong>Pack « Je me reconstruis »</strong>
+              <span>Reprendre des forces, anticiper les imprévus</span>
+            </div>
+          </li>
+          <li class="bundle-item bundle-item-3">
+            <span class="bundle-item-step">03</span>
+            <div>
+              <strong>Pack « Je m'émancipe »</strong>
+              <span>Bâtir ton indépendance financière</span>
+            </div>
+          </li>
+          <li class="bundle-item bundle-item-bonus">
+            <span class="bundle-item-step bundle-item-step-bonus">✦</span>
+            <div>
+              <strong>Bonus · « Par où commencer ? »</strong>
+              <span>Le guide de démarrage exclusif, pour avancer dans l'ordre</span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Remplace l'href par l'URL du tunnel du Parcours Complet -->
+        <a href="#" class="btn btn-mint btn-arrow bundle-cta">Découvrir le Parcours Complet</a>
+      </div>
+
+      <div class="bundle-visual" aria-hidden="true">
+        <div class="bundle-card bundle-card-4">
+          <div class="bc-label">Bonus exclusif</div>
+          <div class="bc-title">Par où<br/><em>commencer ?</em></div>
+        </div>
+        <div class="bundle-card bundle-card-3">
+          <div class="bc-step">03</div>
+          <div class="bc-title">Je <em>m'émancipe.</em></div>
+        </div>
+        <div class="bundle-card bundle-card-2">
+          <div class="bc-step">02</div>
+          <div class="bc-title">Je me <em>reconstruis.</em></div>
+        </div>
+        <div class="bundle-card bundle-card-1">
+          <div class="bc-step">01</div>
+          <div class="bc-title">Je <em>m'organise.</em></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISE ============ -->
+<section class="promise">
+  <div class="container">
+    <div class="promise-inner reveal">
+      <div class="promise-divider"></div>
+      <blockquote>
+        « Parfois, ce dont un parent solo a le plus besoin n'est pas <em>d'être plus fort</em> — mais de trouver <em>une façon plus simple</em> d'avancer. »
+      </blockquote>
+      <div class="promise-divider"></div>
+      <div class="promise-cite">— La Méthode Next Step</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <span class="eyebrow center">Tu te poses peut-être ces questions</span>
+      <h2 class="display">FAQ</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary class="faq-question">Je suis épuisé·e en ce moment. Est-ce vraiment le bon moment pour me lancer là-dedans ?</summary>
+        <div class="faq-answer">
+          Oui, et c'est exactement pour ça que la méthode existe. Mes packs ne sont pas des formations à suivre d'une traite — ce sont des boîtes à outils dans lesquelles tu piochesseulement ce dont tu as besoin, dans l'ordre que tu veux. Si tu es vraiment au bout, commence simplement par les 5 outils gratuits.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">Est-ce que je dois acheter les trois packs ?</summary>
+        <div class="faq-answer">
+          Pas du tout. Chaque pack est complet en lui-même et peut être utilisé indépendamment. Tu peux commencer par celui qui correspond à ce dont tu as besoin maintenant, et acheter les autres plus tard — ou jamais. Aucun engagement, aucune logique d'abonnement.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">Dois-je vraiment suivre les étapes dans l'ordre ?</summary>
+        <div class="faq-answer">
+          Idéalement, oui. L'expérience m'a montré qu'on ne peut pas construire une activité en ligne (étape 3) si on n'a pas d'abord posé une organisation qui tient (étape 1) et retrouvé un peu d'énergie (étape 2). Mais tu connais ta vie mieux que moi — choisis le pack qui résonne avec ce dont tu as besoin aujourd'hui.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">Combien de temps ça me prend chaque jour ?</summary>
+        <div class="faq-answer">
+          Les outils sont calibrés pour des parents solos, donc pour des emplois du temps déjà saturés. La routine matin fait 15 minutes. Les autres outils sont à utiliser au moment qui te convient — il n'y a pas de minimum quotidien imposé.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">Je n'ai jamais rien créé en ligne. Est-ce que la partie « business » est faite pour moi ?</summary>
+        <div class="faq-answer">
+          Oui, totalement. Le pack « Je m'émancipe » est conçu pour des personnes qui partent de zéro, et qui ont surtout très peu de temps. Tu y trouveras un guide pour choisir une idée selon ta personnalité et tes contraintes, et une feuille de route 30 jours pour lancer ton premier produit digital — pas pour devenir freelance ou entrepreneur à temps plein.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">Les packs sont-ils adaptés à toutes les configurations familiales ?</summary>
+        <div class="faq-answer">
+          Oui. Les outils ont été pensés pour s'adapter à toutes les configurations parentales. Les routines enfants sont déclinables selon l'âge. Les checklists et plannings sont neutres et utilisables que tu aies un enfant ou cinq, que tu sois en garde alternée ou non.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="container final-cta-inner reveal">
+    <span class="eyebrow center">Ton premier pas</span>
+    <h2 class="display">Commence par le <em>plus simple.</em></h2>
+    <p>Pas besoin de t'engager, pas besoin de te décider tout de suite. Reçois les 5 outils gratuits, teste-les cette semaine, et vois ce qui change.</p>
+    <a href="#lead-magnet" class="btn btn-primary btn-arrow">Recevoir mes 5 outils</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-dot"></span>
+          Next Step Digital
+        </a>
+        <p>Pour les parents solos qui méritent de souffler — et de construire la vie qu'ils veulent.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Découvrir</h4>
+        <ul>
+          <li><a href="#methode">La méthode</a></li>
+          <li><a href="#packs">Mes packs</a></li>
+          <li><a href="#parcours-complet">Le Parcours Complet</a></li>
+          <li><a href="#lead-magnet">5 outils gratuits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">CGV</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© Next Step Digital · Tous droits réservés</div>
+      <div>Conçu avec soin, par une maman solo, pour les parents solos.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Progressive enhancement: only hide reveal elements if JS is active
+  document.documentElement.classList.add('js');
+
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Reveal on scroll — with immediate trigger for in-viewport items
+  function setupReveals() {
+    const items = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+    items.forEach(el => {
+      // Force immediate reveal for elements visible on page load
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupReveals);
+  } else {
+    setupReveals();
+  }
+
+  // Safety net: ensure everything becomes visible after 2s no matter what
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 2000);
+</script>
+
+</body>
+</html>
